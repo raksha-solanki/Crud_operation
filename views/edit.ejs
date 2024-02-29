@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/update/<%= useredit._id %>" method="post">
+      <input type="text" name="username" placeholder="username"  value="<%=useredit.username  %>">
+      <input type="text" name="mail" placeholder="mail"  value="<%=useredit.mail  %>">
+      <input type="text" name="pic" placeholder="pic"  value="<%=useredit.pic  %>">
+      <input type="submit" value="update">
+    </form>
+  </body>
+</html>

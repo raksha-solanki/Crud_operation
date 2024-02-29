@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    
+   
+    <div class="container p-5">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+          <% users.forEach(elem => { %>
+              <div class="col">
+                  <div class="card" style="width: 18rem;">
+                      <img src="<%= elem.pic %>" class="card-img-top" style="height: 250px; margin-bottom: 15px;" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title"><%= elem.username %></h5>
+                          <p class="card-text"><%= elem.mail %></p>
+                          <div class="d-flex justify-content-between">
+                              <a href="/delete/<%= elem._id %>" class="btn btn-danger">delete</a>
+                              <a href="/edit/<%= elem._id %>" class="btn btn-warning" style="padding: 15px;">edit</a>
+                              <a href="/like/<%= elem._id %>" class="btn btn-primary">like</a>
+                          </div>
+                          <h6 style="padding-top: 25px;">likes : <%= elem.likes.length %></h6>
+                      </div>
+                  </div>
+              </div>
+          <% }) %>
+      </div>
+  </div>
+  
+            
+    </div>
+     
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
